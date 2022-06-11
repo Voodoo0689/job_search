@@ -1,0 +1,38 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="container mb-5">
+        <p>HH GB — один из самых крупных сайтов по поиску работы и сотрудников в мире (по данным рейтинга Superweb).
+            Мы создаем передовые технологии на всех доступных платформах для того, чтобы работодатели могли быстро
+            найти подходящего сотрудника, а соискатели — хорошую работу.
+            Наши мобильные приложения стабильно занимают первые места в категории «Бизнес» на всех платформах.
+            Наш поиск использует искусственный интеллект, а сайт обрабатывает до 3000 запросов в секунду.
+            Каждый месяц на сайте появляется более полумиллиона вакансий, а технологии для работы с персоналом насчитывают
+            более 30 позиций. Ежедневно мы помогаем сотням тысяч человек изменить свою жизнь к лучшему.
+        </p>
+    </div>
+
+    <div class="container mb-5">
+        <h1>ТОП-10 компаний-работодателей</h1>
+
+        <div class="row">
+            {% for item in top_companies %}
+            <div class="bg-primary bg-opacity-10 m-2 p-2 rounded col-md-4">
+                <h3 class="lead">{{ item.0 }}</h3>
+                <p>Количество вакансий: {{ item.1 }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <a class="btn btn-md btn-primary" href="{% url 'vacancies:vacancies_list' %}" role="button">Все вакансии</a>
+    </div>
+
+    <div class="d-block container mb-5 pb-5">
+        <h1>Новости портала</h1>
+
+        {% for item in articles %}
+            <h3 class="article-header">{{ item.header }}</h3>
+            <p class="article-text">{{ item.text }}</p>
+        {% endfor %}
+        <a class="btn btn-md btn-primary" href="{% url 'articles:articles_list' 1 %}" role="button">Все новости</a>
+    </div>
+{% endblock %}

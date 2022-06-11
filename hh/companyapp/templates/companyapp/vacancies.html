@@ -1,0 +1,50 @@
+{% extends 'companyapp/base.html' %}
+
+{% block content %}
+    <div class="row d-flex align-items-start mb-5">
+        <div class="nav flex-column nav-pills me-3 col-3">
+            <a class="btn nav-link" href="{% url 'companies:card_edit' %}">Главная</a>
+            <a class="btn nav-link active" href="{% url 'companies:company_vacancies' %}">Вакансии</a>
+            <a class="btn nav-link" href="{% url 'companies:news' %}">Новости компании</a>
+            <a class="btn nav-link" href="{% url 'companies:profile_security' %}">Безопасность</a>
+            <a class="btn nav-link" href="{% url 'companies:reviews' %}">Отзывы о компании</a>
+            <a class="btn nav-link" href="{% url 'companies:message_list' %}">Сообщения</a>
+        </div>
+        <div class="tab-content col-8">
+            <section style="color: #000; background-color: #f3f2f2;">
+                <div class="container py-3">
+                    <div class="d-flex justify-content-center m-2">
+                        <a class="btn btn-primary" href="{% url 'companies:vacancy_create' %}" role="button">Добавить вакансию</a>
+                    </div>
+
+                    <div class="row mt-2 g-2">
+                        {% for object in object_list %}
+                            <div class="col-md-4">
+                                <div class="card p-2">
+                                    <div class="d-flex justify-content-between mt-3">
+                                        <span>{{ object.get_type_of_employment_display}}</span>
+                                        <span>{{ object.get_experience_display }}</span>
+                                    </div>
+                                    <div class="text-center mt-2 p-3">
+                                        <img src="{{ object.user.avatar.url }}" class="rounded-circle shadow-1-strong" width="100"/>
+                                        <span class="d-block fw-bold">{{ object.position_name }}</span>
+                                        <hr> <span class="d-block fw-bold">{{ object.user.company.name }}</span>
+                                        <div class="d-flex flex-row align-items-center justify-content-center">
+                                            <i class="fas fa-map-marker"></i>
+                                            <small class="ml-1">{{ object.city_of_work }}</small>
+                                        </div>
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <span>от ${{ object.salary }}</span>
+                                            <a class="btn btn-sm btn-outline-dark"
+                                               href="{% url 'companies:vacancy_show' object.pk %}">Открыть</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

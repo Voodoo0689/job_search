@@ -1,0 +1,78 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="content">
+        {% include 'userapp/inc_header.html' %}
+
+        <div class="row d-flex align-items-start mb-5">
+            {% include 'userapp/inc_menu.html' %}
+
+            <div class="col-8 mb-5">
+                <form action="{{ url }}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h5 class="modal-title">{{ title }}</h5>
+
+                    {{ form.non_field.errors }}
+                    <div class="mb-3">
+                        {{ form.edu_org_name.label }}
+                        {{ form.edu_org_name.errors }}
+                        {{ form.edu_org_name }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.end_date.label }}
+                        {{ form.end_date.errors }}
+                        {{ form.end_date }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.edu_type }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.course_name.label }}
+                        {{ form.course_name }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.skills.label }}
+                        {{ form.skills }}
+                    </div>
+
+                    {% if doc_photo %}
+                        <div class="mx-auto">
+                            <img src="/media/{{ doc_photo }}" class="mx-auto d-block img-thumbnail mb-3" alt="Фото документа об образовании" id="photo-img">
+                        </div>
+                    {% endif %}
+
+                    <div class="mb-3">
+                        <label for="file_photo" class="form-label">Фото документа об образовании</label><br>
+                        <input type="file" name="file_photo" value="{{ file_photo }}" id="file_photo" title="">
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.comments.label }}
+                        {{ form.comments }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Ok</button>
+                    <a class="btn btn-secondary" href="{% url 'users:profile_edu' %}">Отмена</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        window.addEventListener('load', function () {
+            let menuItems = document.querySelectorAll('.nav > a.nav-link');
+            for (let i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.remove('active');
+            }
+
+            let menuItem = document.getElementById('menuEdu');
+            menuItem.classList.toggle('active')
+        });
+    </script>
+{% endblock %}

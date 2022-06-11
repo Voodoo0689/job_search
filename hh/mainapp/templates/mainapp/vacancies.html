@@ -1,0 +1,158 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="container pb-5">
+        <div class="pt-2">
+            <h1>Вакансии</h1>
+        </div>
+
+        <div class="paginator">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    {% if vacancies.has_previous %}
+                        <li class="page-item mx-0">
+                            <a class="page-link" href="{% url 'vacancies:vacancies_list' %}?page={{ vacancies.previous_page_number }}&company_id={{ company_id }}&city_id={{ city_id }}&wm1={{ wm1 }}&wm2={{ wm2 }}&wm3={{ wm3 }}&wm4={{ wm4 }}&wm5={{ wm5 }}&skills={{ skills }}"> Предыдущая </a></li>
+                    {% else %}
+                        <li class="page-item disabled mx-0"><a class="page-link" href="#"> Предыдущая </a></li>
+                    {% endif %}
+                    {% for page_number in page_list %}
+                        {% if page_number == '...' %}
+                            <li class="page-item disabled mx-0"><a class="page-link" href="#"> {{ page_number }} </a></li>
+                        {% else %}
+                            {% if vacancies.number == page_number %}
+                                <li class="page-item active mx-0">
+                                    <a class="page-link"
+                                       href="{% url 'vacancies:vacancies_list' %}?page={{ page_number }}&company_id={{ company_id }}&city_id={{ city_id }}&wm1={{ wm1 }}&wm2={{ wm2 }}&wm3={{ wm3 }}&wm4={{ wm4 }}&wm5={{ wm5 }}&skills={{ skills }}"> {{ page_number }} </a></li>
+                            {% else%}
+                                <li class="page-item mx-0">
+                                    <a class="page-link"
+                                       href="{% url 'vacancies:vacancies_list' %}?page={{ page_number }}&company_id={{ company_id }}&city_id={{ city_id }}&wm1={{ wm1 }}&wm2={{ wm2 }}&wm3={{ wm3 }}&wm4={{ wm4 }}&wm5={{ wm5 }}&skills={{ skills }}"> {{ page_number }} </a></li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if vacancies.has_next %}
+                        <li class="page-item mx-0">
+                            <a class="page-link"
+                               href="{% url 'vacancies:vacancies_list' %}?page={{ vacancies.next_page_number }}&company_id={{ company_id }}&city_id={{ city_id }}&wm1={{ wm1 }}&wm2={{ wm2 }}&wm3={{ wm3 }}&wm4={{ wm4 }}&wm5={{ wm5 }}&skills={{ skills }}"> Следующая </a></li>
+                    {% else %}
+                        <li class="page-item disabled mx-0"><a class="page-link" href="#"> Следующая </a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div class="bg-secondary bg-opacity-25 col-md-3">
+                <form action="{% url 'vacancies:vacancies_list' %}?page={{ vacancies.number }}&company_id={{ company_id }}&city_id={{ city_id }}&wm1={{ wm1 }}&wm2={{ wm2 }}&wm3={{ wm3 }}&wm4={{ wm4 }}&wm5={{ wm5 }}&skills={{ skills }}"
+                      method="POST"
+                      enctype="multipart/form-data"
+                      id="filter_form">
+                    {% csrf_token %}
+                    <h6 class="my-3">Фильтры</h6>
+                    <p>Работодатель: </p>
+                    <div class="mb-3">
+                        <select class="form-select" size="10" name="company_id">
+                            {% for item in companies %}
+                                {% if item.user_name_id == company_id %}
+                                    <option value="{{ item.user_name_id }}" selected>{{ item.name }}</option>
+                                {% else %}
+                                    <option value="{{ item.user_name_id }}">{{ item.name }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <p>Тип занятости: </p>
+
+                    <div class="form-check">
+                        {% if wm1 %}
+                            <input class="form-check-input" type="checkbox" value="1" id="full_time" name="wm1" checked>
+                        {% else %}
+                            <input class="form-check-input" type="checkbox" value="1" id="full_time" name="wm1">
+                        {% endif %}
+                        <label class="form-check-label" for="full_time" >Полный рабочий день</label>
+                    </div>
+
+                    <div class="form-check">
+                        {% if wm2 %}
+                            <input class="form-check-input" type="checkbox" value="2" id="partial_time" name="wm2" checked>
+                        {% else%}
+                            <input class="form-check-input" type="checkbox" value="2" id="partial_time" name="wm2">
+                        {% endif %}
+                        <label class="form-check-label" for="partial_time">Частичная занятость</label>
+                    </div>
+
+                    <div class="form-check">
+                        {% if wm3 %}
+                            <input class="form-check-input" type="checkbox" value="3" id="remote" name="wm3" checked>
+                        {% else %}
+                            <input class="form-check-input" type="checkbox" value="3" id="remote" name="wm3">
+                        {% endif %}
+                        <label class="form-check-label" for="remote">Удаленное рабочее место</label>
+                    </div>
+
+                    <div class="form-check">
+                        {% if wm4 %}
+                            <input class="form-check-input" type="checkbox" value="4" id="shift_method" name="wm4" checked>
+                        {% else %}
+                            <input class="form-check-input" type="checkbox" value="4" id="shift_method" name="wm4">
+                        {% endif %}
+                        <label class="form-check-label" for="shift_method">Вахтовый метод работы</label>
+                    </div>
+
+                    <div class="form-check">
+                        {% if wm5 %}
+                            <input class="form-check-input" type="checkbox" value="5" id="project_mode" name="wm5" checked>
+                        {% else %}
+                            <input class="form-check-input" type="checkbox" value="5" id="project_mode" name="wm5">
+                        {% endif %}
+                        <label class="form-check-label" for="project_mode">Проектная работа</label>
+                    </div>
+
+                    <p class="my-3">Рабочее место: </p>
+                    <div class="mb-3">
+                        <select class="form-select" size="10" name="city_id">
+                            {% for city in cities %}
+                                {% if city.id == city_id %}
+                                    <option value="{{ city.id }}" selected>{{ city.name }}</option>
+                                {% else %}
+                                    <option value="{{ city.id }}">{{ city.name }}</option>
+                                {% endif %}
+                            {% endfor%}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="skills" class="form-label">Навыки (из названия вакансии)</label>
+                        <input type="text" class="form-control" name="skills" id="skills" value="{{ skills }}">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mb-3">
+                        Применить фильтр
+                    </button>
+                    <a class="btn btn-md btn-primary mb-3" href="{% url 'vacancies:vacancies_list' %}" role="button">Очистить фильтр</a>
+                </form>
+            </div>
+
+            <div class="col-md-9">
+                {% for vacancy in vacancies %}
+                    <div class="bg-primary bg-opacity-10 p-3 col-md-12">
+                        <h5>{{ vacancy.position_name }}</h5>
+                        <p class="fs-6">{{ vacancy.employer_name }}</p>
+                        <p class="fs-6">{{ vacancy.requirements }}</p>
+                        <p class="fs-6">Требования: {{ vacancy.conditions }}</p>
+                        <p class="fs-6">Требуемый опыт работы: {{ vacancy.work_experience }}</p>
+                        <p class="fs-6">Тип занятости: {{ vacancy.work_mode }}</p>
+                        <p class="fs-6">Оплата от: {{ vacancy.min_salary }} руб.</p>
+                        <p class="fs-6">Рабочее место: {{ vacancy.city_name }}</p>
+                        <p class="fs-6">Дата публикации: {{ vacancy.publish_date|date:"d.m.Y" }}</p>
+                        {% if user.id %}
+                            <a class="btn btn-md btn-primary" href="{% url 'vacancies:vacancy_response' vacancy.id %}" role="button">Откликнуться на вакансию</a>
+                        {% endif %}
+                    </div>
+                    <br>
+                {% endfor%}
+            </div>
+        </div>
+    </div>
+{% endblock %}

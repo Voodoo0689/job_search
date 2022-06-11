@@ -1,0 +1,72 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="content">
+        {% include 'userapp/inc_header.html' %}
+
+        <div class="row d-flex align-items-start mb-5">
+            {% include 'userapp/inc_menu.html' %}
+
+            <div class="col-8 mb-5">
+                <form action="{{ url }}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h5 class="modal-title">{{ title }}</h5>
+
+                    {{ form.non_field.errors }}
+                    <div class="mb-3">
+                        {{ form.company_name.label }}
+                        {{ form.company_name.errors }}
+                        {{ form.company_name }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.start_date.label }}
+                        {{ form.start_date.errors }}
+                        {{ form.start_date }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.end_date.label }}
+                        {{ form.end_date.errors }}
+                        {{ form.end_date }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.position.label }}
+                        {{ form.position.errors }}
+                        {{ form.position }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.progress.label }}
+                        {{ form.progress.errors }}
+                        {{ form.progress }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.comments.label }}
+                        {{ form.comments.errors }}
+                        {{ form.comments }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Ok</button>
+                    <a class="btn btn-secondary" href="{% url 'users:profile_job' %}">Отмена</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        window.addEventListener('load', function () {
+            let menuItems = document.querySelectorAll('.nav > a.nav-link');
+            for (let i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.remove('active');
+            }
+
+            let menuItem = document.getElementById('menuJob');
+            menuItem.classList.toggle('active')
+        });
+    </script>
+{% endblock %}

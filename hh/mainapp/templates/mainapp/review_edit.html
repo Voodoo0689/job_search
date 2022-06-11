@@ -1,0 +1,102 @@
+{% extends 'mainapp/base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <style>
+        i {
+            font-size: 20px;
+        }
+
+        .golden {
+            color: gold;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row d-flex align-items-start mb-5">
+            <div class="col-8 mb-5">
+                <form action="{{ url }}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h3>{{ title }}</h3>
+
+                    {{ form.non_field.errors }}
+                    <div class="mb-3">
+                        {{ form.content.label }}
+                        {{ form.content.errors }}
+                        {{ form.content }}
+                    </div>
+
+                    <div class="mb-3">
+                        <i id="first" class="fas fa-star"></i>
+                        <i id="second" class="fas fa-star"></i>
+                        <i id="third" class="fas fa-star"></i>
+                        <i id="fourth" class="fas fa-star"></i>
+                        <i id="fifth" class="fas fa-star"></i>
+                    </div>
+
+                    <input type="text" name="rate" id="rate" value="{{ rate }}" hidden >
+
+                    <button type="submit" class="btn btn-primary">Ok</button>
+                    <a class="btn btn-secondary" href="{% url 'partners:partner_reviews' company_id %}">Отмена</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let rate = document.getElementById('rate');
+        let firstStar = document.getElementById('first');
+        let secondStar = document.getElementById('second');
+        let thirdStar = document.getElementById('third');
+        let fourthStar = document.getElementById('fourth');
+        let fifthStar = document.getElementById('fifth');
+
+        let goldenClass = 'golden';
+
+        function markStar(star) {
+            unMarkStar(fifthStar);
+            while (star) {
+                if (!star.classList.contains(goldenClass)) {
+                    star.classList.add(goldenClass);
+                }
+                star = star.previousElementSibling;
+            }
+        }
+
+        function unMarkStar(star) {
+            while (star) {
+                if (star.classList.contains(goldenClass)) {
+                    star.classList.remove(goldenClass);
+                }
+                star = star.previousElementSibling;
+            }
+        }
+
+        firstStar.addEventListener('click', function () {
+            markStar(firstStar);
+            rate.value = 1
+        });
+        secondStar.addEventListener('click', function () {
+            markStar(secondStar);
+            rate.value = 2
+        });
+        thirdStar.addEventListener('click', function () {
+            markStar(thirdStar);
+            rate.value = 3
+        });
+        fourthStar.addEventListener('click', function () {
+            markStar(fourthStar);
+            rate.value = 4
+        });
+        fifthStar.addEventListener('click', function () {
+            markStar(fifthStar);
+            rate.value = 5
+        });
+    </script>
+{% endblock %}
+

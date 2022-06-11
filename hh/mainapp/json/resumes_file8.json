@@ -1,0 +1,1118 @@
+{
+    "list": [
+        {
+            "id": "petrikov-a-a",
+            "title": "Андрей Петриков",
+            "href": "/petrikov-a-a",
+            "conversationHref": null,
+            "avatar": {
+                "src": "https://habrastorage.org/getpro/moikrug/uploads/user/100/028/581/9/avatar/medium_54578611656798245210940077c32ced.png",
+                "src2x": "https://habrastorage.org/getpro/moikrug/uploads/user/100/028/581/9/avatar/medium_54578611656798245210940077c32ced.png"
+            },
+            "lastVisited": {
+                "title": "сегодня",
+                "date": "2022-06-10T05:45:17+03:00"
+            },
+            "specialization": "Data quality engineer(Manual testing)",
+            "qualification": {
+                "title": "Middle",
+                "value": 4
+            },
+            "salary": {
+                "title": "От 150 000 ₽",
+                "value": 150000,
+                "currency": "rur"
+            },
+            "availability": {
+                "title": "Рассмотрю предложения",
+                "value": "available"
+            },
+            "location": {
+                "title": "Самара",
+                "name": "",
+                "href": "/resumes?city_ids%5B%5D=728",
+                "value": 728
+            },
+            "remoteWork": true,
+            "relocation": true,
+            "skills": [
+                {
+                    "title": "Тестирование ПО",
+                    "href": "/resumes?skills%5B%5D=607",
+                    "value": 607
+                },
+                {
+                    "title": "Ручное тестирование",
+                    "href": "/resumes?skills%5B%5D=261",
+                    "value": 261
+                },
+                {
+                    "title": "Функциональное тестирование",
+                    "href": "/resumes?skills%5B%5D=881",
+                    "value": 881
+                },
+                {
+                    "title": "SQL",
+                    "href": "/resumes?skills%5B%5D=322",
+                    "value": 322
+                },
+                {
+                    "title": "Баг-трекинг",
+                    "href": "/resumes?skills%5B%5D=427",
+                    "value": 427
+                },
+                {
+                    "title": "Базы данных",
+                    "href": "/resumes?skills%5B%5D=30",
+                    "value": 30
+                },
+                {
+                    "title": "Git",
+                    "href": "/resumes?skills%5B%5D=947",
+                    "value": 947
+                },
+                {
+                    "title": "Python",
+                    "href": "/resumes?skills%5B%5D=446",
+                    "value": 446
+                },
+                {
+                    "title": "Bash",
+                    "href": "/resumes?skills%5B%5D=549",
+                    "value": 549
+                }
+            ],
+            "age": {
+                "title": "24 года",
+                "value": 24
+            },
+            "experience": {
+                "title": "3 года и 6 месяцев",
+                "value": 42
+            },
+            "lastJob": {
+                "position": "Старший инженер по сопровождению Hadoop​",
+                "company": {
+                    "title": "Сбер",
+                    "href": "/companies/sber"
+                },
+                "duration": {
+                    "title": "1 год и 8 месяцев",
+                    "value": 20
+                }
+            },
+            "education": {
+                "university": {
+                    "title": "ПГУТИ",
+                    "href": "/universities/6445"
+                },
+                "faculty": "Информационных систем и технологий",
+                "duration": {
+                    "title": "3 года и 9 месяцев",
+                    "value": 45
+                }
+            },
+            "additionalEducation": [
+                {
+                    "title": "Яндекс.Практикум",
+                    "href": "/education_centers/35"
+                }
+            ],
+            "communities": [],
+            "coworkers": [],
+            "specializations": [
+                {
+                    "title": "Инженер по ручному тестированию"
+                },
+                {
+                    "title": "Аналитик по данным"
+                }
+            ],
+            "gender": 0
+        },
+        {
+            "id": "pasha-mastyaev",
+            "title": "Pavel Mastyaev",
+            "href": "/pasha-mastyaev",
+            "conversationHref": null,
+            "avatar": {
+                "src": "https://habrastorage.org/getpro/moikrug/uploads/user/100/024/351/7/avatar/medium_54578611656798245210940077c32ced.png",
+                "src2x": "https://habrastorage.org/getpro/moikrug/uploads/user/100/024/351/7/avatar/medium_54578611656798245210940077c32ced.png"
+            },
+            "lastVisited": {
+                "title": "1 день назад",
+                "date": "2022-06-09T22:24:03+03:00"
+            },
+            "specialization": "",
+            "qualification": {
+                "title": "Junior",
+                "value": 3
+            },
+            "salary": {
+                "title": "От 50 000 ₽",
+                "value": 50000,
+                "currency": "rur"
+            },
+            "availability": {
+                "title": "Ищу работу",
+                "value": "available"
+            },
+            "location": {
+                "title": "Самара",
+                "name": "",
+                "href": "/resumes?city_ids%5B%5D=728",
+                "value": 728
+            },
+            "remoteWork": true,
+            "relocation": false,
+            "skills": [
+                {
+                    "title": "Java",
+                    "href": "/resumes?skills%5B%5D=1012",
+                    "value": 1012
+                },
+                {
+                    "title": "ООП",
+                    "href": "/resumes?skills%5B%5D=31",
+                    "value": 31
+                },
+                {
+                    "title": "Spring Boot",
+                    "href": "/resumes?skills%5B%5D=1274",
+                    "value": 1274
+                }
+            ],
+            "age": {
+                "title": "22 года",
+                "value": 22
+            },
+            "experience": null,
+            "lastJob": null,
+            "education": {
+                "university": {
+                    "title": "Самарский Университет им. С.П. Королёва",
+                    "href": "/universities/6442"
+                },
+                "faculty": "Информатики",
+                "duration": {
+                    "title": "3 года и 1 месяц",
+                    "value": 37
+                }
+            },
+            "additionalEducation": [],
+            "communities": [],
+            "coworkers": [],
+            "specializations": [
+                {
+                    "title": "Бэкенд разработчик"
+                }
+            ],
+            "gender": 0
+        },
+        {
+            "id": "ruslan999",
+            "title": "Руслан Шарипов",
+            "href": "/ruslan999",
+            "conversationHref": null,
+            "avatar": {
+                "src": "https://habrastorage.org/getpro/moikrug/uploads/user/100/043/597/9/avatar/medium_4cdb648d363948d7bd66a8a48c5486fc.jpg",
+                "src2x": "https://habrastorage.org/getpro/moikrug/uploads/user/100/043/597/9/avatar/medium_4cdb648d363948d7bd66a8a48c5486fc.jpg"
+            },
+            "lastVisited": {
+                "title": "1 день назад",
+                "date": "2022-06-09T21:45:01+03:00"
+            },
+            "specialization": "HTML, CSS, JS, React(Redux, AXIOS, REST API), немного PHP и MySQL.",
+            "qualification": {
+                "title": "Junior",
+                "value": 3
+            },
+            "salary": {
+                "title": "От 80 000 ₽",
+                "value": 80000,
+                "currency": "rur"
+            },
+            "availability": {
+                "title": "Ищу работу",
+                "value": "available"
+            },
+            "location": {
+                "title": "Самара",
+                "name": "",
+                "href": "/resumes?city_ids%5B%5D=728",
+                "value": 728
+            },
+            "remoteWork": true,
+            "relocation": false,
+            "skills": [
+                {
+                    "title": "JavaScript",
+                    "href": "/resumes?skills%5B%5D=264",
+                    "value": 264
+                },
+                {
+                    "title": "React",
+                    "href": "/resumes?skills%5B%5D=1070",
+                    "value": 1070
+                },
+                {
+                    "title": "HTML",
+                    "href": "/resumes?skills%5B%5D=1017",
+                    "value": 1017
+                },
+                {
+                    "title": "CSS",
+                    "href": "/resumes?skills%5B%5D=32",
+                    "value": 32
+                },
+                {
+                    "title": "PHP",
+                    "href": "/resumes?skills%5B%5D=1005",
+                    "value": 1005
+                },
+                {
+                    "title": "MySQL",
+                    "href": "/resumes?skills%5B%5D=713",
+                    "value": 713
+                }
+            ],
+            "age": {
+                "title": "38 лет",
+                "value": 38
+            },
+            "experience": {
+                "title": "7 лет и 3 месяца",
+                "value": 87
+            },
+            "lastJob": {
+                "position": "маркетолог",
+                "company": {
+                    "title": "ООО «Техгаз\"",
+                    "href": null
+                },
+                "duration": {
+                    "title": "7 лет и 3 месяца",
+                    "value": 87
+                }
+            },
+            "education": {
+                "university": {
+                    "title": "СГСПУ",
+                    "href": "/universities/6447"
+                },
+                "faculty": "Филологический",
+                "duration": {
+                    "title": "5 лет",
+                    "value": 60
+                }
+            },
+            "additionalEducation": [],
+            "communities": [],
+            "coworkers": [],
+            "specializations": [
+                {
+                    "title": "Фронтенд разработчик"
+                },
+                {
+                    "title": "Веб-разработчик"
+                }
+            ],
+            "gender": 0
+        },
+        {
+            "id": "vklinov30",
+            "title": "Вадим Клинов",
+            "href": "/vklinov30",
+            "conversationHref": null,
+            "avatar": {
+                "src": "https://career.habr.com/assets/defaults/avatars/medium_male_default-1a36f8351cebf23da60d4e52c858a3eb.png",
+                "src2x": "https://career.habr.com/assets/defaults/avatars/medium_male_default-1a36f8351cebf23da60d4e52c858a3eb.png"
+            },
+            "lastVisited": {
+                "title": "1 день назад",
+                "date": "2022-06-09T21:12:06+03:00"
+            },
+            "specialization": ".Net Developer",
+            "qualification": null,
+            "salary": {
+                "title": "От 250 000 ₽",
+                "value": 250000,
+                "currency": "rur"
+            },
+            "availability": {
+                "title": "Рассмотрю предложения",
+                "value": "available"
+            },
+            "location": {
+                "title": "Самара",
+                "name": "",
+                "href": "/resumes?city_ids%5B%5D=728",
+                "value": 728
+            },
+            "remoteWork": true,
+            "relocation": false,
+            "skills": [
+                {
+                    "title": ".NET Core",
+                    "href": "/resumes?skills%5B%5D=1221",
+                    "value": 1221
+                },
+                {
+                    "title": "Git",
+                    "href": "/resumes?skills%5B%5D=947",
+                    "value": 947
+                },
+                {
+                    "title": "Entity framework",
+                    "href": "/resumes?skills%5B%5D=149",
+                    "value": 149
+                },
+                {
+                    "title": "MongoDB",
+                    "href": "/resumes?skills%5B%5D=229",
+                    "value": 229
+                },
+                {
+                    "title": "Elasticsearch",
+                    "href": "/resumes?skills%5B%5D=482",
+                    "value": 482
+                },
+                {
+                    "title": "RabbitMQ",
+                    "href": "/resumes?skills%5B%5D=184",
+                    "value": 184
+                },
+                {
+                    "title": "Apache Kafka",
+                    "href": "/resumes?skills%5B%5D=1187",
+                    "value": 1187
+                },
+                {
+                    "title": "PostgreSQL",
+                    "href": "/resumes?skills%5B%5D=537",
+                    "value": 537
+                }
+            ],
+            "age": {
+                "title": "26 лет",
+                "value": 26
+            },
+            "experience": {
+                "title": "4 года и 6 месяцев",
+                "value": 54
+            },
+            "lastJob": {
+                "position": "Backend developer",
+                "company": {
+                    "title": "ПРОФИЛУМ",
+                    "href": "/companies/profilum"
+                },
+                "duration": {
+                    "title": "10 месяцев",
+                    "value": 10
+                }
+            },
+            "education": {
+                "university": {
+                    "title": "СамГТУ",
+                    "href": "/universities/6443"
+                },
+                "faculty": "Автоматики и информационных технологий; ФАИТ",
+                "duration": {
+                    "title": "3 года и 10 месяцев",
+                    "value": 46
+                }
+            },
+            "additionalEducation": [],
+            "communities": [],
+            "coworkers": [],
+            "specializations": [
+                {
+                    "title": "Бэкенд разработчик"
+                },
+                {
+                    "title": "Фулстек разработчик"
+                }
+            ],
+            "gender": 0
+        },
+        {
+            "id": "rascal-4402",
+            "title": "Антон Бобрик",
+            "href": "/rascal-4402",
+            "conversationHref": null,
+            "avatar": {
+                "src": "https://career.habr.com/assets/defaults/avatars/medium_male_default-1a36f8351cebf23da60d4e52c858a3eb.png",
+                "src2x": "https://career.habr.com/assets/defaults/avatars/medium_male_default-1a36f8351cebf23da60d4e52c858a3eb.png"
+            },
+            "lastVisited": {
+                "title": "1 день назад",
+                "date": "2022-06-09T18:15:07+03:00"
+            },
+            "specialization": "",
+            "qualification": {
+                "title": "Middle",
+                "value": 4
+            },
+            "salary": null,
+            "availability": {
+                "title": "Не ищу работу",
+                "value": "unavailable"
+            },
+            "location": {
+                "title": "Самара",
+                "name": "",
+                "href": "/resumes?city_ids%5B%5D=728",
+                "value": 728
+            },
+            "remoteWork": true,
+            "relocation": false,
+            "skills": [
+                {
+                    "title": "Golang",
+                    "href": "/resumes?skills%5B%5D=101",
+                    "value": 101
+                },
+                {
+                    "title": "SQL",
+                    "href": "/resumes?skills%5B%5D=322",
+                    "value": 322
+                },
+                {
+                    "title": "Git",
+                    "href": "/resumes?skills%5B%5D=947",
+                    "value": 947
+                },
+                {
+                    "title": "Docker",
+                    "href": "/resumes?skills%5B%5D=1067",
+                    "value": 1067
+                }
+            ],
+            "age": null,
+            "experience": null,
+            "lastJob": null,
+            "education": null,
+            "additionalEducation": [],
+            "communities": [
+                {
+                    "title": "Хабр Q&A",
+                    "name": "habr-qa",
+                    "icon": "habr-qa",
+                    "href": "https://qna.habr.com/user/Firz"
+                }
+            ],
+            "coworkers": [],
+            "specializations": [
+                {
+                    "title": "Бэкенд разработчик"
+                }
+            ],
+            "gender": 0
+        },
+        {
+            "id": "ivansamara",
+            "title": "Ivan Trush",
+            "href": "/ivansamara",
+            "conversationHref": null,
+            "avatar": {
+                "src": "https://habrastorage.org/getpro/moikrug/uploads/user/100/043/334/8/avatar/medium_285cdadb488d2d44c95ff5611ae5f4e0.jpg",
+                "src2x": "https://habrastorage.org/getpro/moikrug/uploads/user/100/043/334/8/avatar/medium_285cdadb488d2d44c95ff5611ae5f4e0.jpg"
+            },
+            "lastVisited": {
+                "title": "1 день назад",
+                "date": "2022-06-09T17:15:29+03:00"
+            },
+            "specialization": "java разработчик",
+            "qualification": {
+                "title": "Senior",
+                "value": 5
+            },
+            "salary": {
+                "title": "От 5 000 $",
+                "value": 5000,
+                "currency": "usd"
+            },
+            "availability": {
+                "title": "Рассмотрю предложения",
+                "value": "available"
+            },
+            "location": {
+                "title": "Самара",
+                "name": "",
+                "href": "/resumes?city_ids%5B%5D=728",
+                "value": 728
+            },
+            "remoteWork": false,
+            "relocation": false,
+            "skills": [
+                {
+                    "title": "Java",
+                    "href": "/resumes?skills%5B%5D=1012",
+                    "value": 1012
+                },
+                {
+                    "title": "Git",
+                    "href": "/resumes?skills%5B%5D=947",
+                    "value": 947
+                },
+                {
+                    "title": "SQL",
+                    "href": "/resumes?skills%5B%5D=322",
+                    "value": 322
+                },
+                {
+                    "title": "Docker",
+                    "href": "/resumes?skills%5B%5D=1067",
+                    "value": 1067
+                },
+                {
+                    "title": "Golang",
+                    "href": "/resumes?skills%5B%5D=101",
+                    "value": 101
+                },
+                {
+                    "title": "Kubernetes",
+                    "href": "/resumes?skills%5B%5D=1207",
+                    "value": 1207
+                }
+            ],
+            "age": {
+                "title": "29 лет",
+                "value": 29
+            },
+            "experience": {
+                "title": "5 лет и 10 месяцев",
+                "value": 70
+            },
+            "lastJob": {
+                "position": "java разрабочик",
+                "company": {
+                    "title": "Сбер",
+                    "href": "/companies/sber"
+                },
+                "duration": {
+                    "title": "1 год и 4 месяца",
+                    "value": 16
+                }
+            },
+            "education": {
+                "university": {
+                    "title": "СамГТУ",
+                    "href": "/universities/6443"
+                },
+                "faculty": "Автоматики и информационных технологий; ФАИТ",
+                "duration": {
+                    "title": "5 лет и 11 месяцев",
+                    "value": 71
+                }
+            },
+            "additionalEducation": [
+                {
+                    "title": "Coursera",
+                    "href": "/education_centers/46"
+                }
+            ],
+            "communities": [],
+            "coworkers": [],
+            "specializations": [
+                {
+                    "title": "Бэкенд разработчик"
+                },
+                {
+                    "title": "Фулстек разработчик"
+                }
+            ],
+            "gender": 0
+        },
+        {
+            "id": "dmitriy-gatilin",
+            "title": "Дмитрий Гатилин",
+            "href": "/dmitriy-gatilin",
+            "conversationHref": null,
+            "avatar": {
+                "src": "https://career.habr.com/assets/defaults/avatars/medium_male_default-1a36f8351cebf23da60d4e52c858a3eb.png",
+                "src2x": "https://career.habr.com/assets/defaults/avatars/medium_male_default-1a36f8351cebf23da60d4e52c858a3eb.png"
+            },
+            "lastVisited": {
+                "title": "1 день назад",
+                "date": "2022-06-09T16:45:12+03:00"
+            },
+            "specialization": "java developer",
+            "qualification": null,
+            "salary": {
+                "title": "От 100 000 ₽",
+                "value": 100000,
+                "currency": "rur"
+            },
+            "availability": {
+                "title": "Рассмотрю предложения",
+                "value": "available"
+            },
+            "location": {
+                "title": "Самара",
+                "name": "",
+                "href": "/resumes?city_ids%5B%5D=728",
+                "value": 728
+            },
+            "remoteWork": true,
+            "relocation": false,
+            "skills": [
+                {
+                    "title": "Java",
+                    "href": "/resumes?skills%5B%5D=1012",
+                    "value": 1012
+                },
+                {
+                    "title": "JavaScript",
+                    "href": "/resumes?skills%5B%5D=264",
+                    "value": 264
+                },
+                {
+                    "title": "Ruby on Rails",
+                    "href": "/resumes?skills%5B%5D=1080",
+                    "value": 1080
+                },
+                {
+                    "title": "Oracle PL/SQL",
+                    "href": "/resumes?skills%5B%5D=1020",
+                    "value": 1020
+                },
+                {
+                    "title": "MySQL",
+                    "href": "/resumes?skills%5B%5D=713",
+                    "value": 713
+                },
+                {
+                    "title": "PostgreSQL",
+                    "href": "/resumes?skills%5B%5D=537",
+                    "value": 537
+                },
+                {
+                    "title": "Java Spring Framework",
+                    "href": "/resumes?skills%5B%5D=632",
+                    "value": 632
+                },
+                {
+                    "title": "Spring Boot",
+                    "href": "/resumes?skills%5B%5D=1274",
+                    "value": 1274
+                },
+                {
+                    "title": "SQL",
+                    "href": "/resumes?skills%5B%5D=322",
+                    "value": 322
+                }
+            ],
+            "age": {
+                "title": "37 лет",
+                "value": 37
+            },
+            "experience": {
+                "title": "7 лет и 3 месяца",
+                "value": 87
+            },
+            "lastJob": {
+                "position": "Ruby on Rails developer",
+                "company": {
+                    "title": "Carbonfay",
+                    "href": "/companies/carbonfay"
+                },
+                "duration": {
+                    "title": "1 год и 11 месяцев",
+                    "value": 23
+                }
+            },
+            "education": null,
+            "additionalEducation": [],
+            "communities": [],
+            "coworkers": [],
+            "specializations": [
+                {
+                    "title": "Бэкенд разработчик"
+                },
+                {
+                    "title": "Фронтенд разработчик"
+                }
+            ],
+            "gender": 0
+        },
+        {
+            "id": "arkhonimus",
+            "title": "Владислав Клепиков",
+            "href": "/arkhonimus",
+            "conversationHref": null,
+            "avatar": {
+                "src": "https://career.habr.com/assets/defaults/avatars/medium_male_default-1a36f8351cebf23da60d4e52c858a3eb.png",
+                "src2x": "https://career.habr.com/assets/defaults/avatars/medium_male_default-1a36f8351cebf23da60d4e52c858a3eb.png"
+            },
+            "lastVisited": {
+                "title": "1 день назад",
+                "date": "2022-06-09T16:12:34+03:00"
+            },
+            "specialization": "Software Developer",
+            "qualification": {
+                "title": "Middle",
+                "value": 4
+            },
+            "salary": {
+                "title": "От 200 000 ₽",
+                "value": 200000,
+                "currency": "rur"
+            },
+            "availability": {
+                "title": "Не ищу работу",
+                "value": "unavailable"
+            },
+            "location": {
+                "title": "Самара",
+                "name": "",
+                "href": "/resumes?city_ids%5B%5D=728",
+                "value": 728
+            },
+            "remoteWork": true,
+            "relocation": false,
+            "skills": [
+                {
+                    "title": "Веб-разработка",
+                    "href": "/resumes?skills%5B%5D=318",
+                    "value": 318
+                },
+                {
+                    "title": "Angular",
+                    "href": "/resumes?skills%5B%5D=155",
+                    "value": 155
+                },
+                {
+                    "title": "TypeScript",
+                    "href": "/resumes?skills%5B%5D=245",
+                    "value": 245
+                },
+                {
+                    "title": "Redux",
+                    "href": "/resumes?skills%5B%5D=1106",
+                    "value": 1106
+                },
+                {
+                    "title": "React",
+                    "href": "/resumes?skills%5B%5D=1070",
+                    "value": 1070
+                },
+                {
+                    "title": "Node.js",
+                    "href": "/resumes?skills%5B%5D=12",
+                    "value": 12
+                },
+                {
+                    "title": "БЭМ",
+                    "href": "/resumes?skills%5B%5D=195",
+                    "value": 195
+                },
+                {
+                    "title": "Разработка мобильных приложений",
+                    "href": "/resumes?skills%5B%5D=19",
+                    "value": 19
+                },
+                {
+                    "title": "Разработка под iOS",
+                    "href": "/resumes?skills%5B%5D=97",
+                    "value": 97
+                },
+                {
+                    "title": "Swift",
+                    "href": "/resumes?skills%5B%5D=1030",
+                    "value": 1030
+                }
+            ],
+            "age": {
+                "title": "28 лет",
+                "value": 28
+            },
+            "experience": null,
+            "lastJob": null,
+            "education": null,
+            "additionalEducation": [],
+            "communities": [
+                {
+                    "title": "Хабр Q&A",
+                    "name": "habr-qa",
+                    "icon": "habr-qa",
+                    "href": "https://qna.habr.com/user/helsov"
+                }
+            ],
+            "coworkers": [],
+            "specializations": [
+                {
+                    "title": "Фронтенд разработчик"
+                },
+                {
+                    "title": "Фулстек разработчик"
+                }
+            ],
+            "gender": 0
+        },
+        {
+            "id": "alexey-nikishkov-mechanica-agency",
+            "title": "Алексей Никишков",
+            "href": "/alexey-nikishkov-mechanica-agency",
+            "conversationHref": null,
+            "avatar": {
+                "src": "https://habrastorage.org/getpro/moikrug/uploads/user/100/046/596/0/avatar/medium_06be28e7a74bc69de6b84b3d0559041d.jpeg",
+                "src2x": "https://habrastorage.org/getpro/moikrug/uploads/user/100/046/596/0/avatar/medium_06be28e7a74bc69de6b84b3d0559041d.jpeg"
+            },
+            "lastVisited": {
+                "title": "1 день назад",
+                "date": "2022-06-09T16:00:04+03:00"
+            },
+            "specialization": "Управление проектами, Бизнес-аналитика, Системная аналитика,  Документация",
+            "qualification": {
+                "title": "Middle",
+                "value": 4
+            },
+            "salary": null,
+            "availability": {
+                "title": "Не ищу работу",
+                "value": "unavailable"
+            },
+            "location": {
+                "title": "Самара",
+                "name": "",
+                "href": "/resumes?city_ids%5B%5D=728",
+                "value": 728
+            },
+            "remoteWork": false,
+            "relocation": false,
+            "skills": [
+                {
+                    "title": "Управление проектами",
+                    "href": "/resumes?skills%5B%5D=259",
+                    "value": 259
+                },
+                {
+                    "title": "Управление людьми",
+                    "href": "/resumes?skills%5B%5D=705",
+                    "value": 705
+                },
+                {
+                    "title": "Ведение переговоров",
+                    "href": "/resumes?skills%5B%5D=131",
+                    "value": 131
+                },
+                {
+                    "title": "Разработка ТЗ",
+                    "href": "/resumes?skills%5B%5D=874",
+                    "value": 874
+                },
+                {
+                    "title": "Управление разработкой",
+                    "href": "/resumes?skills%5B%5D=641",
+                    "value": 641
+                },
+                {
+                    "title": "Проектное планирование",
+                    "href": "/resumes?skills%5B%5D=956",
+                    "value": 956
+                },
+                {
+                    "title": "Организация бизнес-процессов",
+                    "href": "/resumes?skills%5B%5D=240",
+                    "value": 240
+                },
+                {
+                    "title": "Оптимизация бизнес-процессов",
+                    "href": "/resumes?skills%5B%5D=618",
+                    "value": 618
+                },
+                {
+                    "title": "Автоматизация процессов",
+                    "href": "/resumes?skills%5B%5D=426",
+                    "value": 426
+                },
+                {
+                    "title": "Презентации",
+                    "href": "/resumes?skills%5B%5D=1071",
+                    "value": 1071
+                }
+            ],
+            "age": {
+                "title": "29 лет",
+                "value": 29
+            },
+            "experience": {
+                "title": "8 лет и 2 месяца",
+                "value": 98
+            },
+            "lastJob": {
+                "position": "Менеджер проектов",
+                "company": {
+                    "title": "Mechanica",
+                    "href": "/companies/mechanica-agency"
+                },
+                "duration": {
+                    "title": "3 года и 8 месяцев",
+                    "value": 44
+                }
+            },
+            "education": {
+                "university": {
+                    "title": "Самарский Университет им. С.П. Королёва",
+                    "href": "/universities/6442"
+                },
+                "faculty": "Информатики; 6",
+                "duration": {
+                    "title": "3 года и 10 месяцев",
+                    "value": 46
+                }
+            },
+            "additionalEducation": [],
+            "communities": [],
+            "coworkers": [],
+            "specializations": [
+                {
+                    "title": "Менеджер проекта"
+                },
+                {
+                    "title": "Менеджер продукта"
+                }
+            ],
+            "gender": 0
+        },
+        {
+            "id": "alex925",
+            "title": "Алексей Петрунник",
+            "href": "/alex925",
+            "conversationHref": null,
+            "avatar": {
+                "src": "https://habrastorage.org/getpro/moikrug/uploads/user/100/022/068/2/avatar/medium_771bfde5c6b4d12e4af7938ab72f97ad.jpg",
+                "src2x": "https://habrastorage.org/getpro/moikrug/uploads/user/100/022/068/2/avatar/medium_771bfde5c6b4d12e4af7938ab72f97ad.jpg"
+            },
+            "lastVisited": {
+                "title": "1 день назад",
+                "date": "2022-06-09T13:24:12+03:00"
+            },
+            "specialization": "Python backend developer",
+            "qualification": {
+                "title": "Senior",
+                "value": 5
+            },
+            "salary": null,
+            "availability": {
+                "title": "Не ищу работу",
+                "value": "unavailable"
+            },
+            "location": {
+                "title": "Самара",
+                "name": "",
+                "href": "/resumes?city_ids%5B%5D=728",
+                "value": 728
+            },
+            "remoteWork": true,
+            "relocation": false,
+            "skills": [
+                {
+                    "title": "Python",
+                    "href": "/resumes?skills%5B%5D=446",
+                    "value": 446
+                },
+                {
+                    "title": "Flask",
+                    "href": "/resumes?skills%5B%5D=321",
+                    "value": 321
+                },
+                {
+                    "title": "Django",
+                    "href": "/resumes?skills%5B%5D=1075",
+                    "value": 1075
+                },
+                {
+                    "title": "Asyncio",
+                    "href": "/resumes?skills%5B%5D=1116",
+                    "value": 1116
+                },
+                {
+                    "title": "Docker",
+                    "href": "/resumes?skills%5B%5D=1067",
+                    "value": 1067
+                },
+                {
+                    "title": "PostgreSQL",
+                    "href": "/resumes?skills%5B%5D=537",
+                    "value": 537
+                },
+                {
+                    "title": "CI/CD",
+                    "href": "/resumes?skills%5B%5D=1173",
+                    "value": 1173
+                },
+                {
+                    "title": "Linux",
+                    "href": "/resumes?skills%5B%5D=821",
+                    "value": 821
+                },
+                {
+                    "title": "RabbitMQ",
+                    "href": "/resumes?skills%5B%5D=184",
+                    "value": 184
+                },
+                {
+                    "title": "Базы данных",
+                    "href": "/resumes?skills%5B%5D=30",
+                    "value": 30
+                }
+            ],
+            "age": {
+                "title": "28 лет",
+                "value": 28
+            },
+            "experience": {
+                "title": "5 лет и 2 месяца",
+                "value": 62
+            },
+            "lastJob": {
+                "position": "Python-разработчик",
+                "company": {
+                    "title": "ЦИАН",
+                    "href": "/companies/cian-url"
+                },
+                "duration": {
+                    "title": "9 месяцев",
+                    "value": 9
+                }
+            },
+            "education": {
+                "university": {
+                    "title": "ПГУТИ",
+                    "href": "/universities/6445"
+                },
+                "faculty": "Информационных систем и технологий",
+                "duration": {
+                    "title": "2 года и 9 месяцев",
+                    "value": 33
+                }
+            },
+            "additionalEducation": [],
+            "communities": [],
+            "coworkers": [],
+            "specializations": [
+                {
+                    "title": "Бэкенд разработчик"
+                },
+                {
+                    "title": "Фулстек разработчик"
+                }
+            ],
+            "gender": 0
+        }
+    ],
+    "meta": {
+        "totalResults": 2200,
+        "perPage": 25,
+        "currentPage": 1,
+        "totalPages": 88
+    },
+    "limitedAccess": {
+        "type": "guest",
+        "registerHref": "https://career.habr.com/users/auth/tmid",
+        "loginHref": "https://career.habr.com/users/auth/tmid"
+    }
+}

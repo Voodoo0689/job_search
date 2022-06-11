@@ -1,0 +1,18 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="container">
+        {% if send_to_company %}
+            <p>Статус отправки письма работодателю на email {{ company_item.email }}: успешно!</p>
+        {% else %}
+            <p>Статус отправки письма работодателю на email {{ company_item.email }}: ошибка!</p>
+        {% endif %}
+        {% if send_to_applicant %}
+            <p>Статус отправки письма соискателю на email {{ applicant_item.email }}: успешно!</p>
+        {% else %}
+            <p>Статус отправки письма соискателю на email {{ applicant_item.email }}: ошибка!</p>
+        {% endif %}
+
+        <a class="btn btn-md btn-primary" href="#" role="button">Вернуться к списку вакансий</a>
+    </div>
+{% endblock %}

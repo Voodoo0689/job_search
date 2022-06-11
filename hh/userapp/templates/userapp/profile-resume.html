@@ -1,0 +1,58 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="content">
+        {% include 'userapp/inc_header.html' %}
+
+        <div class="row d-flex align-items-start mb-5">
+            {% include 'userapp/inc_menu.html' %}
+            <div class="col-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"># id</th>
+                            <th scope="col">Должность</th>
+                            <th scope="col">Желаемая з/п</th>
+                            <th scope="col">Режим работы</th>
+                            <th scope="col">Дата публикации</th>
+                            <th scope="col">Примечание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in resumes %}
+                            <tr>
+                                <th scope="row">{{ item.id }}</th>
+                                <td>{{ item.position_name }}</td>
+                                <td>{{ item.min_salary }}</td>
+                                <td>{{ item.work_mode }}</td>
+                                <td>{{ item.publish_date|date:"d.m.Y" }}</td>
+                                <td>{{ item.comments }}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="{% url 'users:resume_update' item.id %}"><img src="/static/img/pen.svg" alt="Редактировать" width="16" height="16"></a>
+                                    <a class="btn btn-primary" href="{% url 'users:resume_delete' item.id %}"><img src="/static/img/trash.svg" alt="Удалить" width="16" height="16"></a>
+                                    <a class="btn btn-primary" href="{% url 'users:resume_export' item.id %}">Экспортировать в pdf</a>
+                                    <a class="btn btn-primary" href="{% url 'users:resume_view' item.id %}">Просмотреть резюме</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a class="btn btn-primary mb-5" href="{% url 'users:resume_append' %}"><img src="/static/img/plus-square.svg" alt="Добавить" width="16" height="16">Добавить</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        window.addEventListener('load', function () {
+            let menuItems = document.querySelectorAll('.nav > a.nav-link');
+            for (let i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.remove('active');
+            }
+
+            let menuItem = document.getElementById('menuResume');
+            menuItem.classList.toggle('active')
+        });
+    </script>
+{% endblock %}

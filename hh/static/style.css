@@ -1,0 +1,7 @@
+.errorlist {
+    color: red;
+}
+
+ul.errorlist {
+    list-style-type: none;
+}

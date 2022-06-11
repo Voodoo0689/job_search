@@ -1,0 +1,55 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="content">
+        {% include 'userapp/inc_header.html' %}
+
+        <div class="row d-flex align-items-start mb-5">
+            {% include 'userapp/inc_menu.html' %}
+            <div class="col-8 mb-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"># id</th>
+                            <th scope="col">Год окончания</th>
+                            <th scope="col">Образовательная организация</th>
+                            <th scope="col">Тип образования</th>
+                            <th scope="col">Примечание</th>
+                            <th scope="col">Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in user_edu %}
+                            <tr>
+                                <th scope="row">{{ item.id }}</th>
+                                <td>{{ item.end_date|date:"Y" }}</td>
+                                <td>{{ item.edu_org_name }}</td>
+                                <td>{{ item.edu_type }}</td>
+                                <td>{{ item.comments }}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="{% url 'users:edu_update' item.id %}">Редактировать</a>
+                                    <a class="btn btn-primary" href="{% url 'users:edu_delete' item.id %}">Удалить</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a class="btn btn-primary mb-3" href="{% url 'users:edu_append' %}"><img src="/static/img/plus-square.svg" alt="Добавить" width="16" height="16">Добавить</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        window.addEventListener('load', function () {
+            let menuItems = document.querySelectorAll('.nav > a.nav-link');
+            for (let i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.remove('active');
+            }
+
+            let menuItem = document.getElementById('menuEdu');
+            menuItem.classList.toggle('active')
+        });
+    </script>
+{% endblock %}

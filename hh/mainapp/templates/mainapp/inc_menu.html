@@ -1,0 +1,121 @@
+<div class="conteiner">
+    <div class="header">
+
+            <a class="navbar-brand" href="/">
+                <img class="img_logo" src="/static/img/logo.jpg" alt="logo image" width="40" height="40">
+            </a>
+
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+                <ul class="menu__box">
+                     {% if user.id %}
+                        {% if user.role_name_id == 2 %}
+                            <li class="menu__itemmenu__item"><a class="nav-link text-white" href="{% url 'partners:partners_list' 1 %}">Наши партнеры</a></li>
+                            <li class="menu__itemmenu__item"><a class="nav-link text-white" href="{% url 'vacancies:vacancies_list' %}">Вакансии</a></li>
+                            <li class="menu__itemmenu__item"><a class="nav-link text-white" href="{% url 'articles:articles_list' 1 %}">Новости портала</a></li>
+                            <li class="menu__itemmenu__item"><a class="nav-link text-white" href="/about/">О проекте HH GB</a></li>
+                        {% elif user.role_name_id == 3 %}
+                            <li class="menu__itemmenu__item"><a class="nav-link text-white" href="/about/">О проекте HH GB</a></li>
+                        {% else %}
+                            <li class="menu__item"><a class="nav-link text-white" href="{% url 'partners:partners_list' 1 %}">Наши партнеры</a></li>
+                            <li class="menu__item"><a class="nav-link text-white" href="{% url 'vacancies:vacancies_list' %}">Вакансии</a></li>
+                            <li class="menu__item"><a class="nav-link text-white" href="{% url 'articles:articles_list' 1 %}">Новости портала</a></li>
+                            <li class="menu__item"><a class="nav-link text-white" href="/about/">О проекте HH GB</a></li>
+                        {% endif %}
+                    {% else %}
+                        <li class="menu__item"><a class="nav-link text-white" href="{% url 'partners:partners_list' 1 %}">Наши партнеры</a></li>
+                        <li class="menu__item"><a class="nav-link text-white" href="{% url 'vacancies:vacancies_list' %}">Вакансии</a></li>
+                        <li class="menu__item"><a class="nav-link text-white" href="{% url 'articles:articles_list' 1 %}">Новости портала</a></li>
+                        <li class="menu__item"><a class="nav-link text-white" href="/about/">О проекте HH GB</a></li>
+                    {% endif %}
+                    {% if user.id  %}
+                        {% if user.role_name_id == 1 %}
+                            <li class="menu__item"><a class="nav-link text-white" href="/admin-profile/">{{ user.login }} ({{ user.role_name }})</a></li>
+                        {% elif user.role_name_id == 2 %}
+                            <li class="menu__item"><a class="nav-link text-white" href="/user_profile/">{{ user.login }} ({{ user.role_name }})</a></li>
+                        {% elif user.role_name_id == 3 %}
+                            <li class="menu__item"><a class="nav-link text-white" href="/company-profile/">{{ user.login }} ({{ user.role_name }})</a></li>
+                        {% elif user.role_name_id == 4 %}
+                            <li class="menu__item"><a class="nav-link text-white" href="/moderator-profile/">{{ user.login }} ({{ user.role_name }})</a></li>
+                        {% endif %}
+                        <li class="menu__item"><a class="nav-link text-white" href="/logout/">Выход</a></li>
+                    {% else %}
+                        <li class="menu__item"><a class="nav-link text-white" href="/login">Вход/Регистрация</a></li>
+                    {% endif %}
+
+
+
+<!--                    {% if user_id %}-->
+<!--                        {% if user_role == 2 %}-->
+<!--                            <li><a class="menu__item" href="/user/lk/">Мой&nbspкабинет</a></li>-->
+<!--                        {% else %}-->
+<!--                            <li><a class="menu__item" href="/account/">Мой&nbspкабинет</a></li>-->
+<!--                        {% endif %}-->
+<!--                    {% else %}-->
+<!--                        <li><a class="menu__item" href="/auth/login">Мой&nbspкабинет</a></li>-->
+<!--                    {% endif %}-->
+<!--                    <li><a class="menu__item" href="/vacancy/vacancies_list/1">Вакансии</a></li>-->
+<!--                    {% if user_id %}-->
+<!--                        {% if user_role == 2 %}-->
+<!--                          <li><a class="menu__item" href="/user/lk/">{{ user_name }}</a></li>-->
+<!--                        {% else %}-->
+<!--                          <li><a class="menu__item" href="/company/lk/">{{ user_name }}</a></li>-->
+<!--                        {% endif %}-->
+<!--                        <li><a class="menu__item" href="/auth/logout">Выйти</a></li>-->
+<!--                    {% else %}-->
+<!--                        <li><a class="menu__item" href="/auth/login">Войти</a></li>-->
+<!--                        <li><a class="menu__item" href="/auth/register" class="reg-button">Регистрация</a></li>-->
+<!--                    {% endif %}-->
+                </ul>
+            </div>
+
+
+
+
+        <div class="text">
+            <ul class="menu">
+                {% if user.id %}
+                    {% if user.role_name_id == 2 %}
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'partners:partners_list' 1 %}">Наши партнеры</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'vacancies:vacancies_list' %}">Вакансии</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'articles:articles_list' 1 %}">Новости портала</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/about/">О проекте HH GB</a></li>
+                    {% elif user.role_name_id == 3 %}
+                        <li class="nav-item"><a class="nav-link text-white" href="/about/">О проекте HH GB</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'partners:partners_list' 1 %}">Наши партнеры</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'vacancies:vacancies_list' %}">Вакансии</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'articles:articles_list' 1 %}">Новости портала</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/about/">О проекте HH GB</a></li>
+                    {% endif %}
+                {% else %}
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'partners:partners_list' 1 %}">Наши партнеры</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'vacancies:vacancies_list' %}">Вакансии</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'articles:articles_list' 1 %}">Новости портала</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/about/">О проекте HH GB</a></li>
+                {% endif %}
+
+
+
+
+                {% if user.id  %}
+                    {% if user.role_name_id == 1 %}
+                        <li class="menu-item"><a class="nav-link text-white" href="/admin-profile/">{{ user.login }} ({{ user.role_name }})</a></li>
+                    {% elif user.role_name_id == 2 %}
+                        <li class="menu-item"><a class="nav-link text-white" href="/user_profile/">{{ user.login }} ({{ user.role_name }})</a></li>
+                    {% elif user.role_name_id == 3 %}
+                        <li class="menu-item"><a class="nav-link text-white" href="/company-profile/">{{ user.login }} ({{ user.role_name }})</a></li>
+                    {% elif user.role_name_id == 4 %}
+                        <li class="menu-item"><a class="nav-link text-white" href="/moderator-profile/">{{ user.login }} ({{ user.role_name }})</a></li>
+                    {% endif %}
+                    <li class="menu-item"><a class="nav-link text-white" href="/logout/">Выход</a></li>
+                {% else %}
+                    <li class="menu-item"><a class="nav-link text-white" href="/login">Вход/Регистрация</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>

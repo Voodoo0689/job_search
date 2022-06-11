@@ -1,0 +1,37 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="content">
+        {% include 'userapp/inc_header.html' %}
+
+        <div class="row d-flex align-items-start">
+            {% include 'userapp/inc_menu.html' %}
+
+            <div class="tab-content col-8">
+                {{ title }}
+
+                <p class="my-3 form-control">
+                    {{ message.text }}
+                </p>
+
+                {% if message.to_user_name_id == user.id %}
+                    <a class="btn btn-primary" href="{% url 'users:reply_message' message.id %}">Ответить</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        window.addEventListener('load', function () {
+            let menuItems = document.querySelectorAll('.nav > a.nav-link');
+            for (let i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.remove('active');
+            }
+
+            let menuItem = document.getElementById('menuMessages');
+            menuItem.classList.toggle('active')
+        });
+    </script>
+{% endblock %}

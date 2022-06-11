@@ -1,0 +1,60 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="content">
+        {% include 'userapp/inc_header.html' %}
+
+        <div class="row d-flex align-items-start mb-5">
+            {% include 'userapp/inc_menu.html' %}
+            <div class="col-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"># id</th>
+                            <th scope="col">Организация</th>
+                            <th scope="col">Дата начала работы</th>
+                            <th scope="col">Дата окончания работы</th>
+                            <th scope="col">Должность</th>
+                            <th scope="col">Результат/достижения</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in user_job %}
+                            <tr>
+                                <th scope="row">{{ item.id }}</th>
+                                <td>{{ item.company_name }}</td>
+                                <td>{{ item.start_date|date:"d.m.Y" }}</td>
+                                {% if item.end_date %}
+                                    <td>{{ item.end_date|date:"d.m.Y" }}</td>
+                                {% else %}
+                                    <td>по настоящее время</td>
+                                {% endif %}
+                                <td>{{ item.position }}</td>
+                                <td>{{ item.progress }}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="{% url 'users:job_update' item.id %}"><img src="/static/img/pen.svg" alt="Редактировать" width="16" height="16"></a>
+                                    <a class="btn btn-primary" href="{% url 'users:job_delete' item.id %}"><img src="/static/img/trash.svg" alt="Удалить" width="16" height="16"></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a class="btn btn-primary mb-5" href="{% url 'users:job_append' %}"><img src="/static/img/plus-square.svg" alt="Добавить" width="16" height="16">Добавить</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        window.addEventListener('load', function () {
+            let menuItems = document.querySelectorAll('.nav > a.nav-link');
+            for (let i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.remove('active');
+            }
+
+            let menuItem = document.getElementById('menuJob');
+            menuItem.classList.toggle('active')
+        });
+    </script>
+{% endblock %}

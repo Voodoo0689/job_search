@@ -1,0 +1,26 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row d-flex align-items-start mb-5">
+            <div class="col-8 mb-5">
+                <form action="{% url 'partners:send_message' company_id %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" name="prev_page" id="prev_page" value="{{ prev_page }}" hidden >
+                    <h3>{{ title }}</h3>
+
+                    {{ form.non_field.errors }}
+                    <div class="mb-3">
+                        {{ form.text.label }}
+                        {{ form.text.errors }}
+                        {{ form.text }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Ok</button>
+                    <a class="btn btn-secondary" href="{{ prev_page }}">Отмена</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

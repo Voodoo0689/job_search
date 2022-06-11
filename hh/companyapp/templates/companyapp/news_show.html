@@ -1,0 +1,39 @@
+{% extends 'companyapp/base.html' %}
+
+{% block content %}
+    <div class="row d-flex align-items-start mb-5">
+        <div class="nav flex-column nav-pills me-3 col-3">
+            <a class="btn nav-link" href="{% url 'companies:card_edit' %}">Главная</a>
+            <a class="btn nav-link" href="{% url 'companies:company_vacancies' %}">Вакансии</a>
+            <a class="btn nav-link active" href="{% url 'companies:news' %}">Новости компании</a>
+            <a class="btn nav-link" href="{% url 'companies:profile_security' %}">Безопасность</a>
+            <a class="btn nav-link" href="{% url 'companies:reviews' %}">Отзывы о компании</a>
+            <a class="btn nav-link" href="{% url 'companies:message_list' %}">Сообщения</a>
+        </div>
+        <div class="tab-content col-8">
+            <section class="p-2 p-md-4 text-center text-lg-start shadow-1-strong rounded" style="
+            background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Others/background2.webp);
+          ">
+                <div class="row d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-body m-2">
+                            <div class="row">
+                                <div class="col-lg-4 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
+                                    <img src="/media/{{ object.photo }}" width="150"/>
+                                </div>
+                                <div class="col-lg-8">
+                                    <h4 class="fw-bold mb-4"><strong>{{ object.title }}</strong></h4>
+                                    <p class="mb-4">{{ object.content }}</p>
+                                    <p class="text-muted mb-4">{{ object.publication_date }}</p>
+
+                                    <a class="btn btn-primary" href="{% url 'companies:news_edit' object.pk %}" role="button">Редактировать</a>
+                                    <a class="btn btn-primary" href="{% url 'companies:news_delete' object.pk %}" role="button">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

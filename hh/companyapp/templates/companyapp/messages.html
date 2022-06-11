@@ -1,0 +1,56 @@
+{% extends 'companyapp/base.html' %}
+
+{% block content %}
+    <div class="row d-flex align-items-start mb-5">
+        <div class="nav flex-column nav-pills me-3 col-3">
+            <a class="btn nav-link" href="{% url 'companies:card_edit' %}">Главная</a>
+            <a class="btn nav-link" href="{% url 'companies:company_vacancies' %}">Вакансии</a>
+            <a class="btn nav-link" href="{% url 'companies:news' %}">Новости компании</a>
+            <a class="btn nav-link" href="{% url 'companies:profile_security' %}">Безопасность</a>
+            <a class="btn nav-link" href="{% url 'companies:reviews' %}">Отзывы о компании</a>
+            <a class="btn nav-link active" href="{% url 'companies:message_list' %}">Сообщения</a>
+        </div>
+        <div class="tab-content col-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"># id</th>
+                        <th scope="col">Re: # id</th>
+                        <th scope="col">Направление</th>
+                        <th scope="col">Отправитель</th>
+                        <th scope="col">Получатель</th>
+                        <th scope="col">Сообщение</th>
+                        <th scope="col">Дата отправки</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in messages %}
+                        <tr>
+                            <td scope="row">{{ item.id }}</td>
+                            {% if item.reply_to_message_id %}
+                                <td scope="row">Ответ на #: {{ item.reply_to_message_id }}</td>
+                            {% else %}
+                                <td scope="row"></td>
+                            {% endif %}
+                            {% if item.from_user_name_id == user.id %}
+                                <td scope="row">Исходящее</td>
+                            {% elif item.to_user_name_id == user.id %}
+                                <td scope="row">Входящее</td>
+                            {% else %}
+                                <td scope="row">Чужое</td>
+                            {% endif %}
+                            <td scope="row">{{ item.from_user_name }}</td>
+                            <td scope="row">{{ item.to_user_name }}</td>
+                            <td scope="row">{{ item.text|slice:":40" }}</td>
+                            <td>{{ item.send_date|date:"d.m.Y H:i:s" }}</td>
+                            <td>
+                                <a class="btn btn-primary" href="{% url 'companies:view_message' item.id %}">Просмотреть</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

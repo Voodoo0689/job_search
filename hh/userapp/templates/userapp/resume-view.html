@@ -1,0 +1,82 @@
+{% extends 'userapp/base_resume_view.html' %}
+
+{% block content %}
+    <div class="row d-flex align-items-start mb-3">
+        <div class="col-8 mb-3">
+            <h3>{{ user_profile_item.last_name }} {{ user_profile_item.first_name }} {{ user_profile_item.middle_name }}</h3>
+            <p>Пол: {{ user_profile_item.gender }}. Дата рождения: {{ user_profile_item.birth_date|date:"d.m.Y" }}</p>
+            <p>{{ user_profile_item.phone_num }}</p>
+            <p>{{ user.email }}</p>
+
+            <h4>Желаемая должность, ЗП, режим работы</h4>
+            <p>{{ resume_item.position_name }}</p>
+            <p>{{ resume_item.min_salary }}</p>
+            <p>{{ resume_item.work_mode }}</p>
+        </div>
+        <div class="col-4 mb-3">
+             <img src="/media/{{ user.avatar }}" class="mx-auto d-block img-thumbnail" alt="Фото соискателя" id="logo-img">
+        </div>
+    </div>
+
+    <div class="row d-flex align-items-start mb-3">
+        <div class="col-12 mb-3">
+            <h4>Опыт работы</h4>
+        </div>
+    </div>
+    {% for item in user_job_history %}
+        <div class="row d-flex align-items-start mb-3">
+            <div class="col-4 mb-3">
+                {% if item.end_date %}
+                    <p>{{ item.start_date|date:"d.m.Y"}} - {{ item.end_date|date:"d.m.Y" }}</p>
+                {% else %}
+                    <p>{{ item.start_date|date:"d.m.Y"}} - по настоящее время }}</p>
+                {% endif %}
+            </div>
+            <div class="col-8 mb-3">
+                <h6>{{ item.company_name }}</h6>
+                <p>{{ item.position }}</p>
+                <p>{{ item.progress }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="row d-flex align-items-start mb-3">
+        <div class="col-12 mb-3">
+            <h4>Образование</h4>
+        </div>
+    </div>
+    {% for item in user_edu_history %}
+        <div class="row d-flex align-items-start mb-3">
+            <div class="col-4 mb-3">
+                <p>{{ item.end_date|date:"Y"}}</p>
+            </div>
+            <div class="col-8 mb-3">
+                <h6>{{ item.edu_org_name }}</h6>
+                <p>{{ item.edu_type }}</p>
+                <p>{{ item.course_name }}</p>
+                <p>{{ item.skills }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="row d-flex align-items-start mb-3">
+        <div class="col-12 mb-3">
+            <h4>Ключевые навыки</h4>
+            {% if user_profile_item.hard_skills %}
+                <p>{{ user_profile_item.hard_skills }}</p>
+            {% endif %}
+            {% if user_profile_item.soft_skills %}
+                <p>{{ user_profile_item.soft_skills }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row d-flex align-items-start mb-5">
+        <div class="col-12 mb-3">
+            <h4>Дополнительная информация </h4>
+            {% if user_profile_item.comments %}
+                <p>{{ user_profile_item.comments }}</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

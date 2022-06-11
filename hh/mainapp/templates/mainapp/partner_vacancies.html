@@ -1,0 +1,30 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="container pb-5">
+        <div class="pt-2">
+            <h3>{{ title }}</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                {% for vacancy in vacancies %}
+                    <div class="bg-primary bg-opacity-10 p-3">
+                        <h5>{{ vacancy.position_name }}</h5>
+                        <p class="fs-6">{{ vacancy.requirements }}</p>
+                        <p class="fs-6">Требования: {{ vacancy.conditions }}</p>
+                        <p class="fs-6">Требуемый опыт работы: {{ vacancy.work_experience }}</p>
+                        <p class="fs-6">Тип занятости: {{ vacancy.work_mode }}</p>
+                        <p class="fs-6">Оплата от: {{ vacancy.min_salary }} руб.</p>
+                        <p class="fs-6">Рабочее место: {{ vacancy.city_name }}</p>
+                        <p class="fs-6">Дата публикации: {{ vacancy.publish_date|date:"d.m.Y" }}</p>
+                        {% if user.id %}
+                            <a class="btn btn-md btn-primary" href="{% url 'vacancies:vacancy_response' vacancy.id %}" role="button">Откликнуться на вакансию</a>
+                        {% endif %}
+                    </div>
+                    <br>
+                {% endfor%}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'companyapp/base.html' %}
+
+{% block content %}
+    <div class="row d-flex align-items-start mb-5">
+        <div class="nav flex-column nav-pills me-3 col-3">
+            <a class="btn nav-link" href="{% url 'companies:card_edit' %}">Главная</a>
+            <a class="btn nav-link" href="{% url 'companies:company_vacancies' %}">Вакансии</a>
+            <a class="btn nav-link active" href="{% url 'companies:news' %}">Новости компании</a>
+            <a class="btn nav-link" href="{% url 'companies:profile_security' %}">Безопасность</a>
+            <a class="btn nav-link" href="{% url 'companies:reviews' %}">Отзывы о компании</a>
+            <a class="btn nav-link" href="{% url 'companies:message_list' %}">Сообщения</a>
+        </div>
+        <div class="tab-content col-8">
+            <section style="color: #000; background-color: #f3f2f2;">
+                <div class="container py-5">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-10 col-xl-8 text-center">
+                            <h4 class="fw-bold mb-4">Новости компании "{{ company_profile.name }}"</h4>
+                            <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                                Мы открыты новому и активно развиваемся
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mb-5">
+                        <a class="btn btn-primary" href="{% url 'companies:news_create' %}" role="button">Создать новость</a>
+                    </div>
+
+                    <div class="row text-center">
+                        {% for object in object_list %}
+                            <div class="col-md-4 mb-4 mb-md-4">
+                                <div class="card">
+                                    <div class="card-body py-4 mt-2">
+                                        <div class="d-flex justify-content-center mb-4">
+                                            <img src="/media/{{ object.photo }}"
+                                                 class="" width="200" />
+                                        </div>
+                                        <h5 class="fw-bold">{{ object.title }}</h5>
+                                        <p class="mb-2"><i class="fas fa-quote-left pe-2"></i>{{ object.content|truncatechars:300}}</p>
+                                        <a class="btn btn-outline-primary" href="{% url 'companies:news_show' object.pk %}" role="button">Читать полностью</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'companyapp/base.html' %}
+
+{% block content %}
+    <div class="row d-flex align-items-start mb-5">
+        <div class="nav flex-column nav-pills me-3 col-3">
+            <a class="btn nav-link active" href="{% url 'companies:card_edit' %}">Главная</a>
+            <a class="btn nav-link" href="{% url 'companies:company_vacancies' %}">Вакансии</a>
+            <a class="btn nav-link" href="{% url 'companies:news' %}">Новости компании</a>
+            <a class="btn nav-link" href="{% url 'companies:profile_security' %}">Безопасность</a>
+            <a class="btn nav-link" href="{% url 'companies:reviews' %}">Отзывы о компании</a>
+            <a class="btn nav-link" href="{% url 'companies:message_list' %}">Сообщения</a>
+        </div>
+        <div class="tab-content col-8">
+            <form method="post" enctype="multipart/form-data" id="profile_form">
+                {% csrf_token %}
+                <div class="form-error">{{ edit_form.non_field_errors }}</div>
+                {% for field in edit_form %}
+                    <div class="mb-2">
+                        <label class="form-label col-sm-4" for="{{ field.id_for_label }}">
+                            {{field.label}}:
+                        </label>
+                        {{ field }}
+                    </div>
+                    <div class="form-error">{{ field.errors }}</div>
+                {% endfor %}
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary my-3" id="btnSubmit">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="content">
+    <div class="container">
+        {% if user %}
+            <h4>Учетная запись пользователя {{user.login}} подтверждена!</h4>
+        {% else %}
+            <h3>Верификация не пройдена.</h3>
+        {% endif %}
+        <br>
+        <a class="btn btn-md btn-primary" href="main" role="button">На главную</a>
+    </div>
+</div>
+{% endblock %}

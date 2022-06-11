@@ -1,0 +1,38 @@
+{% extends 'userapp/base.html' %}
+
+{% block content %}
+    <h4>Личный кабинет соискателя</h4>
+
+    <div class="mx-auto">
+        <div class="row d-flex align-items-start">
+            {% include 'userapp/inc_menu.html' %}
+
+            <div class="tab-content col-8" id="v-pills-tabContent">
+                <div class="tab-pane show active" id="v-pills-main">
+                    {% include "userapp/profile-main.html" %}
+                </div>
+                <div class="tab-pane" id="v-pills-edu">
+                    {% include "userapp/profile-edu.html" %}
+                </div>
+                <div class="tab-pane" id="v-pills-job">
+                </div>
+                <div class="tab-pane" id="v-pills-security">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        window.addEventListener('load', function () {
+            let menuItems = document.querySelectorAll('.nav > a.nav-link');
+            for (let i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.remove('active');
+            }
+
+            let menuItem = document.getElementById('menuMain');
+            menuItem.classList.toggle('active')
+        });
+    </script>
+{% endblock %}

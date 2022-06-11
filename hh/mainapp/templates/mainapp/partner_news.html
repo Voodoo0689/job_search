@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="container pb-5">
+        <div class="pt-2">
+            <h3>{{ title }}</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                {% for news_item in news %}
+                    <div class="bg-primary bg-opacity-10 p-3">
+                        <h5>{{ news_item.title }}</h5>
+                        <img src="/media/{{ news_item.photo }}" class="col-2 mx-auto d-block img-thumbnail mb-3"
+                             alt="Сопровождающее изображение" id="logo-img">
+                        <p class="fs-6">{{ news_item.content }}</p>
+                        <p class="fs-6">Дата публикации: {{ news_item.publication_date|date:"d.m.Y" }}</p>
+                    </div>
+                    <br>
+                {% endfor%}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

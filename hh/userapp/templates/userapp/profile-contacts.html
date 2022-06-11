@@ -1,0 +1,53 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="content">
+        {% include 'userapp/inc_header.html' %}
+
+        <div class="row d-flex align-items-start">
+            {% include 'userapp/inc_menu.html' %}
+
+            <div class="tab-content col-8">
+                <form action="{% url 'userapp:profile_contacts' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    {{ form.non_field.errors }}
+                    <div class="mb-3">
+                        <label for="file_photo" class="form-label">Файл фото</label><br>
+                        <input type="file" name="file_photo" value="{{ user.avatar }}" id="file_photo" title="">
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.email.label }}
+                        {{ form.email.errors }}
+                        {{ form.email }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.comments.label }}
+                        {{ form.comments.errors }}
+                        {{ form.comments }}
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary my-5" id="btnSubmit">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        window.addEventListener('load', function () {
+            let menuItems = document.querySelectorAll('.nav > a.nav-link');
+            for (let i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.remove('active');
+            }
+
+            let menuItem = document.getElementById('menuContacts');
+            menuItem.classList.toggle('active')
+        });
+    </script>
+{% endblock %}

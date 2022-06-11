@@ -1,0 +1,67 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="content">
+        {% include 'userapp/inc_header.html' %}
+
+        <div class="row d-flex align-items-start mb-5">
+            {% include 'userapp/inc_menu.html' %}
+            <div class="col-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"># id</th>
+                            <th scope="col">Re: # id</th>
+                            <th scope="col">Направление</th>
+                            <th scope="col">Отправитель</th>
+                            <th scope="col">Получатель</th>
+                            <th scope="col">Сообщение</th>
+                            <th scope="col">Дата отправки</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in messages %}
+                            <tr>
+                                <td scope="row">{{ item.id }}</td>
+                                {% if item.reply_to_message_id %}
+                                    <td scope="row">Ответ на #: {{ item.reply_to_message_id }}</td>
+                                {% else %}
+                                    <td scope="row"></td>
+                                {% endif %}
+                                {% if item.from_user_name_id == user.id %}
+                                    <td scope="row">Исходящее</td>
+                                {% elif item.to_user_name_id == user.id %}
+                                    <td scope="row">Входящее</td>
+                                {% else %}
+                                    <td scope="row">Чужое</td>
+                                {% endif %}
+                                <td scope="row">{{ item.from_user_name }}</td>
+                                <td scope="row">{{ item.to_user_name }}</td>
+                                <td scope="row">{{ item.text|slice:":40" }}</td>
+                                <td>{{ item.send_date|date:"d.m.Y H:i:s" }}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="{% url 'users:view_message' item.id %}">Просмотреть</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        window.addEventListener('load', function () {
+            let menuItems = document.querySelectorAll('.nav > a.nav-link');
+            for (let i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.remove('active');
+            }
+
+            let menuItem = document.getElementById('menuMessages');
+            menuItem.classList.toggle('active')
+        });
+    </script>
+{% endblock %}
